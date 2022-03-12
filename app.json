@@ -16,7 +16,7 @@
       "api_hash": {
         "description": "你的 Telegram 账号 api hash。"
       },
-      "SESSION": {
+      "session": {
         "description": "你的 Telegram 账号 session。参考 https://gitlab.com/Xtao-Labs/pagermaid-modify#session"
       }
     },
