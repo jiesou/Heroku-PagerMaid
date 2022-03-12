@@ -1,0 +1,24 @@
+{
+    "name": "Heroku-PagerMaid",
+    "description": "使用 Heroku 和 Docker 搭建 PargerMaid",
+    "keywords": [
+      "UserBot",
+      "Python",
+      "Docker"
+    ],
+    "website": "https://xtaolabs.com",
+    "repository": "https://github.com/jiesou/Heroku-PagerMaid",
+    "logo": "https://xtaolabs.com/pagermaid-logo.png",
+    "env": {
+      "api_key": {
+        "description": "你的 Telegram 账号 api key。"
+      },
+      "api_hash": {
+        "description": "你的 Telegram 账号 api hash。"
+      },
+      "SESSION": {
+        "description": "你的 Telegram 账号 session。参考 https://gitlab.com/Xtao-Labs/pagermaid-modify#session"
+      }
+    },
+    "stack": "container"
+  }
