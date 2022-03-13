@@ -21,7 +21,7 @@
 - 不支持需要 sudo 的操作
 - 因为权限问题不支持 redis 数据库，可能导致**部分插件命令无法使用**，或功能异常
 - [30 分钟自动休眠](https://devcenter.heroku.com/articles/free-dyno-hours#dyno-sleeping)，**需要手动访问 Web 页面来唤醒**（PagerMaid 需要不到一分钟的时间来启动）
-- 因为自动休眠的机制，需要一直挂机的功能（如自动回复）无法使用。你可以用别的服务例如 GithubAction 自动唤醒，但这会浪费你的免费 Dyno 时间
+- 因为自动休眠的机制，需要一直挂机的功能无法使用
 - PagerMaid **重启即丢失所有配置和插件**，添加插件比较麻烦
 - 设置的 session 可能会过期（取决于你的 Telegram 设置），需要重新获取并修改 session 环境变量
 - Heroku Dyno 免费内存仅 512M，运行消耗大量内存的任务（例如 groupword）时可能 OOM
@@ -38,6 +38,15 @@
 配置文件在仓库的 /workdir/config.yml 中。可以在 /workdir/plugins/ 中添加插件，插件从[这里](https://gitlab.com/Xtao-Labs/PagerMaid_Plugins)获取。
 
 事实上，**所有 workdir 中的内容都会添加到 Docker 容器中**。特别的，如果插件需要 Python 依赖，请将依赖添加到 /workdir/plugins/requirements.txt 它会在构建时安装
+
+## 特殊技巧：让 PagerMaid 不自动休眠
+
+为了节约你的免费 Dyno 时间，免费用户的 Dyno 会[自动休眠](https://devcenter.heroku.com/articles/free-dyno-hours#dyno-sleeping)。但仍可以通过一些手段让其 24 小时运行。切记：不绑定信用卡，每月免费的 Dyno 时间仅有 550 小时，约合 22.91 天，**24 小时运行将极快地浪费你的 Dyno 时间**
+
+### 几种方法
+
+- 不修改文件，只是使用 [UptimeRobot](https://uptimerobot.com) 等网页监控工具轮训 Web 页面即可
+- 将 [Dyno configuration](https://devcenter.heroku.com/articles/dynos#dyno-configurations) 设为 Worker。即 heroku.yml 中的 `build: docker: web: Dockerfile run: web: python -m pagermaid` 改为 `build: worker: docker: Dockerfile run: worker: python -m pagermaid`。这种方法会导致没有 Web 页面
 
 ## 特殊技巧：支持 sudo、redis
 
@@ -62,7 +71,7 @@
 - 每次启动 PagerMaid 都需要命令行操作手动取消构建，还需要等 5 分钟左右从头构建（而不是不到一分钟的只启动时间）
 - 没有 Web 页面
 
-### 解决“卡在这里”
+### 使用命令行手动取消构建
 
 1. 先使用 Heroku CLI 将 Hueroku 存储库（不是连接到的 Github 存储库）[克隆到本地](https://devcenter.heroku.com/articles/git-clone-heroku-app)
 2. 使用 `heroku plugins:install heroku-builds` 安装 Heroku CLI 的 [Heroku Builds 插件](https://github.com/heroku/heroku-builds)
