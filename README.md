@@ -4,7 +4,7 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-> 注意不要搞混 session、api_id、api_key 这三个环境变量
+> 注意不要搞混 session、api_key、api_hash 这三个环境变量
 
 ## 特点
 
@@ -29,7 +29,7 @@
 
 ## 修改配置和添加插件
 
-你可以直接在环境变量中设置字符串形式的 session、api_id、api_key(hash)，并且环境变量的优先级高于配置文件
+你可以直接在环境变量中设置字符串形式的 session、api_key、api_hash，并且环境变量的优先级高于配置文件
 
 1. 在你的 Github 中 [fork](https://docs.github.com/cn/get-started/quickstart/fork-a-repo) 本仓库
 2. 在你部署的 Heroku App 中[连接到刚才 fork 的 Github 仓库](https://devcenter.heroku.com/articles/github-integration)，启用 Automatic Deploys 自动部署
