@@ -11,13 +11,13 @@
     "logo": "https://xtaolabs.com/pagermaid-logo.png",
     "env": {
       "api_key": {
-        "description": "你的 Telegram 账号 api key。获取自 https://my.telegram.org"
+        "description": "你的 Telegram 账号 api id。获取自 https://my.telegram.org"
       },
       "api_hash": {
         "description": "你的 Telegram 账号 api hash。同上"
       },
       "session": {
-        "description": "你的 Telegram 账号 session。参考 https://gitlab.com/Xtao-Labs/pagermaid-modify#session"
+        "description": "你的 Telegram 账号 session。在线获取参考 https://gitlab.com/Xtao-Labs/pagermaid-modify#session"
       }
     },
     "stack": "container"
