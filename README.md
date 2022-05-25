@@ -1,10 +1,10 @@
-# Heroku-PagerMaid
+# PagerMaid-Modify for Heroku
 
-## Heroku Button 图形化在线部署
+> 现已支持 PagerMaid-Pyro 在 Heroku 上搭建，请查看 [pyro 分支](https://github.com/jiesou/Heroku-PagerMaid/tree/pyro)
+
+## Heroku Button - 在线部署
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
-> 注意不要搞混 session、api_key、api_hash 这三个环境变量
 
 ## 特点
 
