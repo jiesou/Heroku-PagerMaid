@@ -15,10 +15,8 @@ RUN source ~/.bashrc \
     ## 安装运行环境依赖
     && apt-get update \
     && apt-get upgrade -y \
-    && apt install software-properties-common -y \
-    && apt-add-repository ppa:deadsnakes/ppa -y \
     && apt-get install --no-install-recommends -y \
-        python3.7 \
+        python3 \
         python3-pip \
         tesseract-ocr \
         tesseract-ocr-eng \
@@ -27,8 +25,6 @@ RUN source ~/.bashrc \
         sudo \
         git \
         openssl \
-        ## 权限原因不支持 redis 数据库
-        redis-server \
         curl \
         wget \
         neofetch \
@@ -73,7 +69,7 @@ RUN source ~/.bashrc \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone \
     ## python软链接
-    && ln -sf /usr/bin/python3.7 /usr/bin/python \
+    && ln -sf /usr/bin/python3 /usr/bin/python \
     ## 升级pip
     && python -m pip install --upgrade pip \
     ## 添加用户
@@ -81,10 +77,13 @@ RUN source ~/.bashrc \
     && usermod -aG sudo,users $USER_NAME \
     && echo "$USER_NAME ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/$USER_NAME \
     ## 克隆仓库
-    && git clone -b master https://gitlab.com/Xtao-Labs/pagermaid-modify.git $WORK_DIR \
+    && git clone -b master https://github.com/jiesou/PagerMaid-Pyro.git $WORK_DIR \
     && git config --global pull.ff only \
     ## 复制s6启动脚本（权限原因不使用s6，使用heroku.yml中的run运行）
     # && cp -r s6/* / \
+    ## Web 仪表板依赖
+    && echo flask >> requirements.txt \
+    && echo gunicorn >> requirements.txt \
     ## pip install
     && pip install -r requirements.txt
 ## 添加 workdir

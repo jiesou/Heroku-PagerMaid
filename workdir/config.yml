@@ -7,9 +7,9 @@
 #                \//_____/      \/              \/     \/        \/
 # ===================================================================
 
-# API Credentials of your telegram application created at https://my.telegram.org/apps | api_key is api_id
-api_key: "ID_HERE_"
-api_hash: "HASH_HERE_"
+# API Credentials of your telegram application created at https://my.telegram.org/apps
+api_id: "ID_HERE"
+api_hash: "HASH_HERE"
 
 # Either debug logging is enabled or not
 debug: "False"
@@ -21,13 +21,6 @@ web_interface:
   secret_key: "RANDOM_STRING_HERE"
   host: "127.0.0.1"
   port: "3333"
-
-# Redis connection information
-redis:
-  host: "localhost"
-  port: "6379"
-  db: "14"
-  password: ""
 
 # Locale settings
 application_language: "zh-cn"
@@ -62,11 +55,14 @@ mtp_port: ""
 mtp_secret: ""
 
 # Apt Git source
-git_source: "https://gitlab.com/Xtao-Labs/PagerMaid_Plugins/-/raw/master/"
-git_ssh: "https://gitlab.com/Xtao-Labs/pagermaid-modify.git"
+git_source: "https://gitlab.com/Xtao-Labs/PagerMaid_Plugins/-/raw/v2/"
+git_ssh: "https://gitlab.com/Xtao-Labs/PagerMaid-Pyro.git"
 
 # Update Notice
 update_check: "True"
+update_time: "86400"
+update_username: "PagerMaid_Modify_bot"
+update_delete: "True"
 
 # ipv6
 ipv6: "False"
@@ -83,11 +79,6 @@ time_form: "%H:%M"
 date_form: "%A %y/%m/%d"
 # only support %m %d %H %M %S
 start_form: "%m/%d %H:%M"
-
-# Bot admins
-bot_admins:
-  - example1
-  - example2
 
 # Silent to reduce editing times
 silent: "True"
