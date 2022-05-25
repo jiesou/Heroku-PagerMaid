@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import request
 
-app = Flask("PagerMaid-Pyro for Heroku")
+app = Flask("app")
 
 @app.route('/')
 def home():

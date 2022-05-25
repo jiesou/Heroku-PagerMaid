@@ -10,13 +10,13 @@
     "repository": "https://github.com/jiesou/Heroku-PagerMaid/tree/pyro",
     "logo": "https://xtaolabs.com/pagermaid-logo.png",
     "env": {
-      "api_hash": {
+      "API_HASH": {
         "description": "你的 Telegram 账号 api hash。获取自 https://my.telegram.org"
       },
-      "api_id": {
+      "API_ID": {
         "description": "你的 Telegram 账号 api id。同上"
       },
-      "string_session": {
+      "STRING_SESSION": {
         "description": "你的 Telegram 账号 Pyrogram Session。在线获取参考 https://replit.com/@dashezup/generate-pyrogram-session-string#main.py"
       }
     },

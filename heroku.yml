@@ -2,4 +2,4 @@ build:
   docker:
     web: Dockerfile
 run:
-  web: python -m pagermaid && gunicorn app:app
+  web: python -m pagermaid & gunicorn -b 0.0.0.0:8000 web:app
