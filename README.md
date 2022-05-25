@@ -1,6 +1,6 @@
 # Heroku-PagerMaid
 
-## Heroku Button
+## Heroku Button 图形化在线部署
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
@@ -14,6 +14,7 @@
  _提示：因为权限问题 pingdc 命令无法在 heroku 部署的 PagerMaid 上正常使用，此处使用了下文的特殊技巧_
  ![speedtest](https://s3.bmp.ovh/imgs/2022/03/e41b8cf0fe549d0e.jpg)
  - 无需刻意升级 PagerMaid，因为重新构建即是最新
+ - 无需担心长期开着 PagerMaid 导致账号异常等
  - 无需担心恶意插件损坏服务器等
 
 ## 已知问题
