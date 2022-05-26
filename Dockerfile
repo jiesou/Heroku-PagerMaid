@@ -82,8 +82,7 @@ RUN source ~/.bashrc \
     ## 复制s6启动脚本（权限原因不使用s6，使用heroku.yml中的run运行）
     # && cp -r s6/* / \
     ## Web 仪表板依赖
-    && echo flask >> requirements.txt \
-    && echo gunicorn >> requirements.txt \
+    && echo wsgiserver >> requirements.txt \
     ## pip install
     && pip install -r requirements.txt
 ## 添加 workdir

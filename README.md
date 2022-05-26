@@ -1,6 +1,6 @@
 # PagerMaid-Pyro for Heroku
 
-## Heroku Button - 图形化在线部署
+## Heroku Button - 在线部署
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
