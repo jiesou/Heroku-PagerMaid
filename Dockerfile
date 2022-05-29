@@ -73,7 +73,7 @@ RUN source ~/.bashrc \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone \
     ## python软链接
-    && ln -sf /usr/bin/python3.7 /usr/bin/python \
+    && ln -sf /usr/bin/python3 /usr/bin/python \
     ## 升级pip
     && python -m pip install --upgrade pip \
     ## 添加用户
