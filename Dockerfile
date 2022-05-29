@@ -15,10 +15,10 @@ RUN source ~/.bashrc \
     ## 安装运行环境依赖
     && apt-get update \
     && apt-get upgrade -y \
-    && apt install software-properties-common -y \
-    && apt-add-repository ppa:deadsnakes/ppa -y \
+    #&& apt install software-properties-common -y \
+    #&& apt-add-repository ppa:deadsnakes/ppa -y \
     && apt-get install --no-install-recommends -y \
-        python3.7 \
+        python3 \
         python3-pip \
         tesseract-ocr \
         tesseract-ocr-eng \
