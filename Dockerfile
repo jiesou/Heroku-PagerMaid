@@ -77,7 +77,7 @@ RUN source ~/.bashrc \
     && usermod -aG sudo,users $USER_NAME \
     && echo "$USER_NAME ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/$USER_NAME \
     ## 克隆仓库
-    && git clone -b master https://github.com/jiesou/PagerMaid-Pyro.git $WORK_DIR \
+    && git clone -b master https://github.com/TeamPGM/PagerMaid-Pyro.git $WORK_DIR \
     && git config --global pull.ff only \
     ## 复制s6启动脚本（权限原因不使用s6，使用heroku.yml中的run运行）
     # && cp -r s6/* / \
