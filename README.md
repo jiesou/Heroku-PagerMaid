@@ -1,5 +1,7 @@
 # PagerMaid-Modify for Heroku
 
+> 最新消息：Heroku 将于 2022.11.28 停止提供免费服务。价格最低为 7$/mo。本项目不再积极维护~，虽然之前也没怎么维护过~
+
 > 现已支持 PagerMaid-Pyro 在 Heroku 上搭建，请查看 [pyro 分支](https://github.com/jiesou/Heroku-PagerMaid/tree/pyro)
 
 ## Heroku Button - 在线部署
